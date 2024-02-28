@@ -52,7 +52,6 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
   const scrollRef = useRef<ScrollView | null>(null);
 
   const itemsRef = useRef<Array<TouchableOpacity | null>>([]);
-  const [scrollViewWidth, setScrollViewWidth] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [categoryWidth, setCategoryWidth] = useState<number | null>(null);
 
