@@ -1,9 +1,3 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -12,7 +6,11 @@ import { useEffect } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import * as SecureStore from "expo-secure-store";
+// @ts-ignore
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
+import ModalHeaderText from "@/components/ModalHeaderText";
+import React from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
@@ -86,38 +84,42 @@ function RootLayoutNav() {
   }, [isLoaded]);
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen
-        name="(modals)/login"
-        options={{
-          title: "Log in or sign up to Airbnb",
-          headerTitleStyle: { fontFamily: "mon-sb" },
-          presentation: "modal",
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => router.back()}>
-              <View style={{ paddingRight: 25 }}>
-                <Ionicons name="close-outline" size={28} />
-              </View>
-            </TouchableOpacity>
-          ),
-        }}
-      />
-      <Stack.Screen name="listing/[id]" options={{ headerTitle: "" }} />
-      <Stack.Screen
-        name="(modals)/booking"
-        options={{
-          presentation: "transparentModal",
-          animation: "fade",
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => router.back()}>
-              <View style={{ paddingRight: 25 }}>
-                <Ionicons name="close-outline" size={28} />
-              </View>
-            </TouchableOpacity>
-          ),
-        }}
-      />
-    </Stack>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="(modals)/login"
+          options={{
+            title: "Log in or sign up to Airbnb",
+            headerTitleStyle: { fontFamily: "mon-sb" },
+            presentation: "modal",
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => router.back()}>
+                <View style={{ paddingRight: 25 }}>
+                  <Ionicons name="close-outline" size={28} />
+                </View>
+              </TouchableOpacity>
+            ),
+          }}
+        />
+        <Stack.Screen name="listing/[id]" options={{ headerTitle: "" }} />
+        <Stack.Screen
+          name="(modals)/booking"
+          options={{
+            presentation: "transparentModal",
+            animation: "fade",
+            headerTransparent: true,
+            headerTitle: () => <ModalHeaderText />,
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => router.back()}>
+                <View style={{ paddingRight: 25 }}>
+                  <Ionicons name="close-outline" size={28} />
+                </View>
+              </TouchableOpacity>
+            ),
+          }}
+        />
+      </Stack>
+    </GestureHandlerRootView>
   );
 }
