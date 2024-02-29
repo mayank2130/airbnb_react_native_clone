@@ -1,9 +1,7 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-<img src="assets/one.png?raw=true" alt="Optional Title" width="400">
-<img src="assets/one.png?raw=true" alt="Optional Title" width="50%">
-<img src="assets/two.png?raw=true" alt="Optional Title" width="50%">
-<img src="assets/three.png?raw=true" alt="Optional Title" width="50%"> <img src="assets/four.png?raw=true" alt="Optional Title" width="50%">
+<img src="assets/one.png?raw=true" alt="Optional Title" width="400"> <img src="assets/two.png?raw=true" alt="Optional Title" width="400">
+<img src="assets/three.png?raw=true" alt="Optional Title" width="400"> <img src="assets/four.png?raw=true" alt="Optional Title" width="400">
 
 # Getting Started
 
