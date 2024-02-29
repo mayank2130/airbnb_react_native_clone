@@ -1,6 +1,9 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-
+![screenshot](assets/one.png?raw=true "Optional Title")
+![screenshot](assets/two.png?raw=true "Optional Title")
+![screenshot](assets/three.png?raw=true "Optional Title")
+![screenshot](assets/four.png?raw=true "Optional Title")
 
 # Getting Started
 
