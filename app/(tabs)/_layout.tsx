@@ -2,7 +2,11 @@ import { View, Text, SafeAreaView } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import Colors from "@/constants/Colors";
-import { FontAwesome5, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  FontAwesome5,
+  Ionicons,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 
 const Layout = () => {
   return (
@@ -12,7 +16,7 @@ const Layout = () => {
         tabBarLabelStyle: {
           fontFamily: "mon-sb",
         },
-        tabBarStyle:{paddingBottom:7, height:56,gap:1}
+        tabBarStyle: { paddingBottom: 7, height: 56, gap: 1 },
       }}
     >
       <Tabs.Screen
@@ -47,7 +51,11 @@ const Layout = () => {
         options={{
           tabBarLabel: "Inbox",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="message-outline" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="message-outline"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
@@ -55,6 +63,7 @@ const Layout = () => {
         name="profile"
         options={{
           tabBarLabel: "Profile",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-circle-outline" color={color} size={size} />
           ),

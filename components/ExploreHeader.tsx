@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import { useRef, useState } from "react";
 import Colors from "@/constants/Colors";
@@ -73,6 +74,7 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={styles.container}>
         <View style={styles.actionRow}>
           <Link href={"/(modals)/booking"} asChild>
@@ -169,7 +171,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     flexDirection: "row",
     gap: 10,
-    padding: 14,
+    padding: 16,
     alignItems: "center",
     width: 280,
     borderWidth: StyleSheet.hairlineWidth,
